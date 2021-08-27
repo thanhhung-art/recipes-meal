@@ -77,6 +77,9 @@ var Container = styled.div`
       background: #ccc;
       border-radius: 10px;
     }
+    @media screen and (min-width: 320px) and (max-width: 600px){
+      overflow: visible;
+    }
   `,
   Container2 = styled.div`
     width: calc(100% / 3 - 11px);
@@ -86,6 +89,10 @@ var Container = styled.div`
     box-shadow: 0px 0px 14px -3px rgba(0, 0, 0, 0.53);
     border-radius: 5px;
     cursor: pointer;
+    @media screen and (min-width: 320px) and (max-width: 600px){
+      width: 47%;
+      height: 150px;
+    }
   `,
   MainTitle = styled.h2`
     text-align: center;

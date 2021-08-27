@@ -15,21 +15,27 @@ function Navbar() {
     )
 }
 
-var Container = styled.nav`
+var
+Container = styled.nav`
     padding: 1rem 0;
-`;
-
-var ContainerLevel2 = styled.div`
+`,
+ContainerLevel2 = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
     max-width: 1300px;
     margin: 0 auto;
-`;
-
-var Logo = styled.h2`
+    @media screen and (min-width: 320px){
+        gap: 1rem;
+    }
+`,
+Logo = styled.h2`
     font-size: 1.5rem;
     font-weight: bold;
+    @media screen and (min-width: 320px) {
+        margin-left: 10px;
+    }
 `;
 
 export default Navbar;

@@ -44,6 +44,10 @@ var Container = styled.div`
   max-width: 1300px;
   margin: 0 auto;
   display: flex;
+  @media screen and (min-width: 320px) and (max-width: 600px) {
+    flex-direction: column;
+    padding: 0 10px;
+  }
 `;
 
 export default App;

@@ -43,7 +43,7 @@ function Meal() {
             <WrapIngredient>
             {mealIngredients.map((e, i) => (
                 <Ingredient key={i}>
-                {e}({measures[i] === "Dash" ? "-" : measures[i]})
+                  {e}({measures[i] === "Dash" ? "-" : measures[i]})
                 </Ingredient>
             ))}
             </WrapIngredient>
@@ -64,20 +64,34 @@ var Container = styled.div`
     display: flex;
     width: 100%;
     margin-top: 2rem;
+    @media screen and (min-width: 320px) and (max-width: 600px) {
+      flex-direction: column;
+      gap: 1rem;
+    }
   `,
   Container2 = styled.div`
     margin-bottom: 2rem;
   `,
   ColLeft = styled.div`
     width: 50%;
+    @media screen and (min-width: 320px) and (max-width: 600px) {
+      width: 100%;
+    }
   `,
   ColRight = styled.div`
     width: 50%;
     padding-left: 1rem;
+    @media screen and (min-width: 320px) and (max-width: 600px) {
+      width: 100%;
+      padding-left: 0;
+    }
   `,
   Title = styled.h1`
     font-size: 2.2rem;
     margin-bottom: 1rem;
+    @media screen and (min-width: 320px) and (max-width: 600px){
+      margin-bottom: .5rem;
+    }
   `,
   Title2 = styled.h3`
     font-size: 1.5rem;
@@ -102,6 +116,10 @@ var Container = styled.div`
   Instruction = styled.p`
     margin-top: 1rem;
     font-size: 1.2rem;
+    @media screen and (min-width: 320px) and (max-width: 600px){
+      text-align: justify;
+      padding: 0 .3rem;
+    }
   `,
   Link = styled.a`
     font-size: 2rem;
@@ -109,6 +127,9 @@ var Container = styled.div`
     margin-top: 2rem;
     display: block;
     color: blue;
+    @media screen and (min-width: 320px) and (max-width: 600px){
+      margin-bottom: 2rem;
+    }
   `;
 
 export default Meal;
