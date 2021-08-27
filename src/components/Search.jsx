@@ -18,32 +18,33 @@ function Search() {
   const handleChange = (e) => {
     let value = e.target.value;
     if (value) {
-      const listSuggests = recipes.filter(
-        (suggestion) =>
-          suggestion.strMeal.toLowerCase().includes(value.toLowerCase())
+      const listSuggests = recipes.filter((suggestion) =>
+        suggestion.strMeal.toLowerCase().includes(value.toLowerCase())
       );
       setCurrSuggests(listSuggests);
       setUserInput(value);
     } else {
-        setCurrSuggests([]);
-        setActiveEl(0);
-        setUserInput("");
+      setCurrSuggests([]);
+      setActiveEl(0);
+      setUserInput("");
     }
   };
 
   const handleKeyDown = (e) => {
     if (e.keyCode === 13) {
       dispatch(getMealId(currSuggests[activeEl].idMeal));
+      // reset search bar
       setActiveEl(0);
       setShowSuggest(false);
       setUserInput("");
       inputEl.current.blur();
+      // redirect
       history.push(`/meal/${currSuggests[activeEl].idMeal}`);
     } else if (e.keyCode === 38) {
       if (activeEl === 0) {
         setActiveEl(currSuggests.length - 1);
       } else {
-        if(userInput) setActiveEl(activeEl - 1);
+        if (userInput) setActiveEl(activeEl - 1);
       }
     } else if (e.keyCode === 40) {
       if (activeEl === currSuggests.length - 1) {
@@ -52,6 +53,11 @@ function Search() {
         if (userInput) setActiveEl(activeEl + 1);
       }
     }
+  };
+
+  const handleClick = (id) => {
+    dispatch(getMealId(id));
+    history.push(`/meal/${id}`);
   };
 
   return (
@@ -75,7 +81,11 @@ function Search() {
         <Suggests>
           {currSuggests.map((e, i) => {
             return (
-              <SuggestItem key={i} active={i === activeEl ? "red" : "#333"}>
+              <SuggestItem
+                active={i === activeEl ? "red" : "#333"}
+                onMouseDown={() => handleClick(e.idMeal)}
+                key={i}
+              >
                 {e.strMeal}
               </SuggestItem>
             );
@@ -118,9 +128,13 @@ var Container = styled.div`
     outline: none;
     border: none;
     border-bottom: 2px solid #ccc;
-    @media screen and (min-width: 320px) and (max-width: 600px){
-        width: 100vw;
-        padding: 10px;
+    @media screen and (min-width: 768px) and (max-width: 1024px){
+      width: 500px;
+      margin-right: 1rem;
+    }
+    @media screen and (min-width: 320px) and (max-width: 768px) {
+      width: 100vw;
+      padding: 10px;
     }
   `;
 

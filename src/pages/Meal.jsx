@@ -23,12 +23,9 @@ function Meal() {
   return (
     <Container>
       <ColLeft>
-        <img
+        <Image
           src={meal.strMealThumb}
           alt=""
-          width="100%"
-          height="auto"
-          style={{ objectFit: "cover" }}
         />
       </ColLeft>
       <ColRight>
@@ -64,7 +61,11 @@ var Container = styled.div`
     display: flex;
     width: 100%;
     margin-top: 2rem;
-    @media screen and (min-width: 320px) and (max-width: 600px) {
+    @media screen and (min-width: 768px) and (max-width: 1024px){
+      flex-direction: column;
+      margin-top: 0;
+    }
+    @media screen and (min-width: 320px) and (max-width: 768px) {
       flex-direction: column;
       gap: 1rem;
     }
@@ -74,14 +75,22 @@ var Container = styled.div`
   `,
   ColLeft = styled.div`
     width: 50%;
-    @media screen and (min-width: 320px) and (max-width: 600px) {
+    @media screen and (min-width: 768px) and (max-width: 1024px){
+      width: 100%;
+      padding: 1rem;
+      height: 440px;
+    }
+    @media screen and (min-width: 320px) and (max-width: 768px) {
       width: 100%;
     }
   `,
   ColRight = styled.div`
     width: 50%;
     padding-left: 1rem;
-    @media screen and (min-width: 320px) and (max-width: 600px) {
+    @media screen and (min-width: 768px) and (max-width: 1024px){
+      width: 100%;
+    }
+    @media screen and (min-width: 320px) and (max-width: 768px) {
       width: 100%;
       padding-left: 0;
     }
@@ -89,7 +98,7 @@ var Container = styled.div`
   Title = styled.h1`
     font-size: 2.2rem;
     margin-bottom: 1rem;
-    @media screen and (min-width: 320px) and (max-width: 600px){
+    @media screen and (min-width: 320px) and (max-width: 768px){
       margin-bottom: .5rem;
     }
   `,
@@ -99,6 +108,14 @@ var Container = styled.div`
   Title3 = styled.h5`
     font-size: 0.9rem;
     font-weight: 400;
+  `,
+  Image = styled.img`
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    @media screen and (min-width: 768px) and (max-width: 1024px){
+      height: 400px;
+    }
   `,
   Tags = styled.h5`
     font-size: 0.9rem;
@@ -116,7 +133,7 @@ var Container = styled.div`
   Instruction = styled.p`
     margin-top: 1rem;
     font-size: 1.2rem;
-    @media screen and (min-width: 320px) and (max-width: 600px){
+    @media screen and (min-width: 320px) and (max-width: 768px){
       text-align: justify;
       padding: 0 .3rem;
     }
@@ -127,7 +144,7 @@ var Container = styled.div`
     margin-top: 2rem;
     display: block;
     color: blue;
-    @media screen and (min-width: 320px) and (max-width: 600px){
+    @media screen and (min-width: 320px) and (max-width: 1024px){
       margin-bottom: 2rem;
     }
   `;

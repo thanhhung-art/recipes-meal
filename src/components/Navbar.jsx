@@ -26,14 +26,14 @@ ContainerLevel2 = styled.div`
     flex-wrap: wrap;
     max-width: 1300px;
     margin: 0 auto;
-    @media screen and (min-width: 320px){
+    @media screen and (min-width: 320px) and (max-width: 768px){
         gap: 1rem;
     }
 `,
 Logo = styled.h2`
     font-size: 1.5rem;
     font-weight: bold;
-    @media screen and (min-width: 320px) {
+    @media screen and (min-width: 320px) and (max-width: 768px){
         margin-left: 10px;
     }
 `;

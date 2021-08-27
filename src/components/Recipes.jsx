@@ -77,7 +77,10 @@ var Container = styled.div`
       background: #ccc;
       border-radius: 10px;
     }
-    @media screen and (min-width: 320px) and (max-width: 600px){
+    @media screen and (min-width: 768px) and (max-width: 1024px){
+      height: calc(100vh - 170px);
+    }
+    @media screen and (min-width: 320px) and (max-width: 768px){
       overflow: visible;
     }
   `,
@@ -89,7 +92,10 @@ var Container = styled.div`
     box-shadow: 0px 0px 14px -3px rgba(0, 0, 0, 0.53);
     border-radius: 5px;
     cursor: pointer;
-    @media screen and (min-width: 320px) and (max-width: 600px){
+    @media screen and (min-width: 768px) and (max-width: 1024px){
+      width: 48%;
+    }
+    @media screen and (min-width: 320px) and (max-width: 768px){
       width: 47%;
       height: 150px;
     }

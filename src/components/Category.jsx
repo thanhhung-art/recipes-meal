@@ -56,7 +56,10 @@ var Container = styled.div`
       background: #ccc;
       border-radius: 10px;
     }
-    @media screen and (min-width: 320px) and (max-width: 600px){
+    @media screen and (min-width: 768px) and (max-width: 1024px){
+      height: calc(100vh - 170px);
+    }
+    @media screen and (min-width: 320px) and (max-width: 768px){
       display: flex;
       overflow-x: scroll;
       height: 190px;
@@ -76,14 +79,14 @@ var Container = styled.div`
   MainTitle = styled.h2`
     text-align: center;
     padding: 1rem 0;
-    @media screen and (min-width: 320px) and (max-width: 600px){
+    @media screen and (min-width: 320px) and (max-width: 768px){
       
     }
   `,
   Title = styled.h2`
     font-size: 24px;
     margin-bottom: 1rem;
-    @media screen and (min-width: 320px) and (max-width: 600px){
+    @media screen and (min-width: 320px) and (max-width: 768px){
       font-size: 1.3rem
     }
   `,
@@ -92,7 +95,11 @@ var Container = styled.div`
     height: 150px;
     object-fit: cover;
     cursor: pointer;
-    @media screen and (min-width: 320px) and (max-width: 600px){
+    @media screen and (min-width: 768px) and (max-width: 1024px){
+      width: 180px;
+      height: 110px;
+    }
+    @media screen and (min-width: 320px) and (max-width: 768px){
       width: 170px;
       height: 80px;
     }
