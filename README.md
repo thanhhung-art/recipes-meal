@@ -5,7 +5,4 @@ A wwb app recipes meal built in react
 
 ## usage
 
-Unordered Lists:
-1 clone project
-2 cd to recipes meal
-3 run ```bash yarn install``` or ```bash npm install```
+11 clone project 22 cd to recipes meal 33 run ```yarn install``` or ```npm install```
